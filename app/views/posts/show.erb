@@ -1,0 +1,26 @@
+<section class="articles">
+  <div class="column is-8 is-offset-2">
+    <div class="card article">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content has-text-centered">
+            <h3 class="title article-title">
+              <%= @post.title %>
+            </h3>
+            <div class="tags has-addons level-item">
+              <span class="tag is-rounded">
+                <%= time_ago_in_words(@post.created_at || Time.now) + ' ago' %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="content article-body">
+          <%= simple_format(@post.body) %>
+          <p>
+            <%= link_to 'View all posts', url_for(:posts, :index) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
