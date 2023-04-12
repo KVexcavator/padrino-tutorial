@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>
+      <%= "Padrino Sample Blog" %>
+    </title>
+    <%= stylesheet_link_tag 'bulma', 'application' %>
+    <%= javascript_include_tag 'jquery', 'application' %>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img alt="Logo of Padrino blog" src="http://padrinorb.com/images/logo-6475397a.svg"/>
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div class="navbar-menu" id="navbarMenu">
+          <div class="navbar-end">
+            <%= link_to 'Home', '/', {:class => 'navbar-item'} %>
+            <%= link_to 'Blog', url_for(:posts, :index), {:class => 'navbar-item'} %>
+            <%= link_to 'About us', url_for(:about), {:class => 'navbar-item'} %>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-info is-medium is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            An example blog created with Padrino
+          </h1>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
