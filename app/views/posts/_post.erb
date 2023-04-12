@@ -9,6 +9,9 @@
             </h3>
           </p>
           <div class="has-addons">
+            <span class="tag is-rounded is-info">
+              <%= post.account.email %>
+            </span>
             <span class="tag is-rounded">
               <%= time_ago_in_words(post.created_at || Time.now) + ' ago' %>
             </span>
